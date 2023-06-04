@@ -45,6 +45,7 @@ public class AddFakeDatabase {
         account.put("DOB", "2000-07-02");
         account.put("ADDRESS", "test");
         account.put("GENDER", "M");
+        account.put("SCORE", "0");
         account.put("USER_ROLE", "admin");
         for (int i=0;i<200;++i) {
             account.put("USER_CATEGORY_ID", "UC_00001");
@@ -80,10 +81,8 @@ public class AddFakeDatabase {
     }
     public void addFakeTheaters() throws Exception {
         HashMap<String, String> theater = new HashMap<String, String>();
-
-
         theater.put("ADDRESS", "test");
-        for (int i=0;i<2;++i) {
+        for (int i=0;i<10;++i) {
             theater.put("NAME", "4HB THU DUC"+ i);
             theater.put("ID", idGenerator.generateId(cinemaManagementProcessor.getDefaultDatabaseTable()));
             Response response = cinemaManagementProcessor.insertData(theater, true);
@@ -98,7 +97,7 @@ public class AddFakeDatabase {
     public void addFakeScreenRooms() throws Exception{
         HashMap<String, String> room = new HashMap<String, String>();
         room.put("CAPACITY", "80");
-        for (int i=0;i<2;++i) {
+        for (int i=0;i<10;++i) {
             for(int j = 1; j <= 6; j++) {
                 room.put("ID", idGenerator.generateId(screenRoomManagementProcessor.getDefaultDatabaseTable()));
                 room.put("NAME", "ROOM_" + j);
@@ -145,8 +144,6 @@ public class AddFakeDatabase {
                         seat.put("ID", idGenerator.generateId(seatManagementProcessor.getDefaultDatabaseTable()));
                         seat.put("NAME", String.valueOf((char)('A' + k)) + t);
                         seat.put("SCREEN_ROOM_ID", "SR_" + String.format("%05d", (sr_id)));
-
-
                         Response response = seatManagementProcessor.insertData(seat, true);
                         if (response.getStatusCode() == StatusCode.OK) {
                             System.out.println("insert 1 row success" + seat.get("ID"));
@@ -263,7 +260,7 @@ public class AddFakeDatabase {
                 itemBooking.put("PAYMENT_ID", "PAY_" + String.format("%05d",  k * 12 + t));
                 itemBooking.put("ITEM_ID", "ITE_" + String.format("%05d", 1));
                 itemBooking.put("QUANTITY", "1");
-                Response response = bookingTicketManagementProcessor.insertData(itemBooking, true);
+                Response response = bookingItemMangementProcessor.insertData(itemBooking, true);
                 if (response.getStatusCode() == StatusCode.OK) {
                     System.out.println("insert 1 row success" + itemBooking.get("ID"));
                 } else {
@@ -300,14 +297,14 @@ public class AddFakeDatabase {
         method.add("VISA_CARD");
         method.add("CRASH_MONEY");
         for(int i = 0; i < 3; i++){
-                paymentMethor.put("ID", idGenerator.generateId(paymentMethodManagementProcessor.getDefaultDatabaseTable()));
-                paymentMethor.put("NAME",method.get(i));
-                Response response = paymentMethodManagementProcessor.insertData(paymentMethor, true);
-                if (response.getStatusCode() == StatusCode.OK) {
-                    System.out.println("insert 1 row success" + paymentMethor.get("ID"));
-                } else {
-                    System.out.println(" failed");
-                }
+            paymentMethor.put("ID", idGenerator.generateId(paymentMethodManagementProcessor.getDefaultDatabaseTable()));
+            paymentMethor.put("NAME",method.get(i));
+            Response response = paymentMethodManagementProcessor.insertData(paymentMethor, true);
+            if (response.getStatusCode() == StatusCode.OK) {
+                System.out.println("insert 1 row success" + paymentMethor.get("ID"));
+            } else {
+                System.out.println(" failed");
+            }
         }
     }
     public void addFakePrice(){
@@ -332,23 +329,21 @@ public class AddFakeDatabase {
     }
     public static void main(String[] args) throws Exception {
         AddFakeDatabase addFakeDatabase = new AddFakeDatabase();
-//        addFakeDatabase.addFakeUserCategory();
-//        addFakeDatabase.addFakeAccounts();
-//        addFakeDatabase.addFakePromotions();
-//        addFakeDatabase.addFakeTheaters();
-//        addFakeDatabase.addFakeScreenRooms();
-//        addFakeDatabase.addFakeSeatCategory();
-//        addFakeDatabase.addFakeSeats();
-//        addFakeDatabase.addFakeShowTimes();
-//        addFakeDatabase.addFakeItemCategory();
-//        addFakeDatabase.addFakeItems();
-//        addFakeDatabase.addFakePrice();
-//        addFakeDatabase.addFakeTicket();
-//        addFakeDatabase.addFakePaymentMethod();;
-//        addFakeDatabase.addFakePayments();
-//        addFakeDatabase.addFakeBookingItems();
-//        addFakeDatabase.addFakeBookingSeats();
-
+        addFakeDatabase.addFakeUserCategory();
+        addFakeDatabase.addFakeAccounts();
+        addFakeDatabase.addFakePromotions();
+        addFakeDatabase.addFakeTheaters();
+        addFakeDatabase.addFakeScreenRooms();
+        addFakeDatabase.addFakeSeats();
+        addFakeDatabase.addFakeShowTimes();
+        addFakeDatabase.addFakeItemCategory();
+        addFakeDatabase.addFakeItems();
+        addFakeDatabase.addFakeTicket();
+        addFakeDatabase.addFakePaymentMethod();
+        addFakeDatabase.addFakePayments();
+        addFakeDatabase.addFakeBookingItems();
+        addFakeDatabase.addFakeBookingSeats();
+        addFakeDatabase.addFakePrice();
     }
 }
 
