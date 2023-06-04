@@ -30,11 +30,9 @@
                </font>
             </Text>
             <TextField fx:id="nameField" layoutX="178.0" layoutY="104.0" />
-            <TextField fx:id="priceField" layoutX="178.0" layoutY="172.0" />
             <Label layoutX="136.0" layoutY="108.0" prefHeight="17.0" prefWidth="33.0" text="Name" />
-            <Label layoutX="142.0" layoutY="176.0" text="Price" />
             <Label layoutX="121.0" layoutY="142.0" text="Category" />
-            <ComboBox fx:id="categoryField" layoutX="178.0" layoutY="138.0" prefWidth="150.0" />
+            <ComboBox fx:id="itemCategoryCategoryField" layoutX="178.0" layoutY="138.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>

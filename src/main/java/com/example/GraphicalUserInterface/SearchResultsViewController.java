@@ -71,8 +71,9 @@ public class SearchResultsViewController implements Initializable {
     }
     public void displaySearchResults() {
         resultsContainer.getChildren().clear();
+        System.out.println(searchResults.keySet());
         for (String key : searchResults.keySet()) {
-            Movie movie = main.getProcessorManager().getMovieManagementProcessor().getMovieManager().getMovieById(key);
+            Movie movie = main.getProcessorManager().getMovieManagementProcessor().getMovieManager().getMovieById(key.toString());
             if (movie != null && movie.getGenres().toString().contains(filterGenre) && movie.getLanguage().contains(filterLanguage)) {
                 HBox movieContainer = new HBox();
                 movieContainer.setPrefHeight(220);

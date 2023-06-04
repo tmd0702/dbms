@@ -129,7 +129,7 @@ public class ManagementViewController implements Initializable {
 
         tabPanels = new ArrayList<Button>();
         dataView = new GridPane();
-        tabPanels.add(homeTabPanel);
+//        tabPanels.add(homeTabPanel);
         tabPanels.add(movieTabPanel);
         tabPanels.add(accountTabPanel);
         tabPanels.add(theaterTabPanel);

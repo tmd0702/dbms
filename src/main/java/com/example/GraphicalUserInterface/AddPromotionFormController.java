@@ -44,7 +44,7 @@ public class AddPromotionFormController implements Initializable {
         String id = null;
         for (int i=0; i<userCategoryCategories.size();++i) {
             if (userCategoryCategories.get(i).equals(value)) {
-                id = Utils.getRowValueByColumnName(i + 2, "ID", userCategoryInfo);
+                id = Utils.getRowValueByColumnName(i + 2, "USER_CATEGORY.ID", userCategoryInfo);
                 break;
             }
         }

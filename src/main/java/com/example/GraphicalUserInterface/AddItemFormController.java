@@ -19,9 +19,9 @@ import java.util.ResourceBundle;
 public class AddItemFormController implements Initializable {
     private ManagementMain main;
     @FXML
-    private ComboBox categoryField;
+    private ComboBox itemCategoryCategoryField;
     @FXML
-    private TextField nameField, priceField;
+    private TextField nameField;
     @FXML
     private VBox addItemForm;
     public AddItemFormController() throws Exception {
@@ -34,7 +34,7 @@ public class AddItemFormController implements Initializable {
     }
     public void categoryFieldInit() {
         String movieStatus[] = {"Popcorn", "Drink"};
-        categoryField.setItems(FXCollections.observableArrayList(movieStatus));
+        itemCategoryCategoryField.setItems(FXCollections.observableArrayList(movieStatus));
     }
     @FXML
     public void cancelInsertBtnOnClick() {
@@ -66,8 +66,7 @@ public class AddItemFormController implements Initializable {
     public void handleInsertRecordRequest() {
         HashMap<String, String> itemInfo = new HashMap<String, String>();
         itemInfo.put("NAME", nameField.getText());
-        itemInfo.put("CATEGORY", categoryField.getValue().toString());
-        itemInfo.put("PRICE", priceField.getText());
+        itemInfo.put("CATEGORY", itemCategoryCategoryField.getValue().toString());
         itemInfo.put("ID", main.getIdGenerator().generateId(main.getProcessorManager().getItemManagementProcessor().getDefaultDatabaseTable()));
         JSONObject jsonData = new JSONObject();
         jsonData.put("column_value_dict", itemInfo);

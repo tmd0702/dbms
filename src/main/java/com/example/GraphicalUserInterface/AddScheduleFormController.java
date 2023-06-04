@@ -59,7 +59,7 @@ public class AddScheduleFormController implements Initializable {
     public void startTimeFieldInit() {
         showTimeStartTimeField.setDisable(false);
         showTimeInfo = main.getProcessorManager().getShowTimeManagementProcessor().select("ST.*", 0, -1, String.format("NOT EXISTS (SELECT S.SHOW_TIME_ID FROM SCHEDULES S WHERE S.SHOW_DATE = '%s' AND S.SCREEN_ROOM_ID = '%s' AND S.SHOW_TIME_ID = ST.ID)", showDateField.getValue(), getScreenRoomObjectIDFromComboBox(screenRoomNameField.getValue())), "ST.START_TIME ASC", "SHOW_TIMES ST").getData();
-        startTimes = Utils.getDataValuesByColumnName(showTimeInfo, "SHOW_TIMES.START_TIME");
+        startTimes = Utils.getDataValuesByColumnName(showTimeInfo, "START_TIME");
         ArrayList<String> removeObjectList = new ArrayList<String>();
         for (String startTime : startTimes) {
             if (!main.getProcessorManager().getScheduleManagementProcessor().isMovieSchedulingAvailable(getMovieObjectIDFromComBoBox(movieTitleField.getValue()), startTime, getScreenRoomObjectIDFromComboBox(screenRoomNameField.getValue()), getCinemaObjectIDFromComboBox(cinemaNameField.getValue()), DateTimeFormatter.ofPattern("yyyy-MM-dd").format(showDateField.getValue()))) {
@@ -87,7 +87,7 @@ public class AddScheduleFormController implements Initializable {
     }
     public void screenRoomNameFieldInit() {
         screenRoomNameField.setDisable(false);
-        screenRoomInfo = main.getProcessorManager().getScreenRoomManagementProcessor().getData(0, -1, String.format("CINEMA_ID = '%s'", getCinemaObjectIDFromComboBox(cinemaNameField.getValue())), "NAME ASC").getData();
+        screenRoomInfo = main.getProcessorManager().getScreenRoomManagementProcessor().getData(0, -1, String.format("CINEMA_ID = '%s'", getCinemaObjectIDFromComboBox(cinemaNameField.getValue())), "SCREEN_ROOMS.NAME ASC").getData();
         screenRoomNames = Utils.getDataValuesByColumnName(screenRoomInfo, "SCREEN_ROOMS.NAME");
         screenRoomNameField.setItems(FXCollections.observableArrayList(screenRoomNames));
         screenRoomNameField.valueProperty().addListener((obs, oldItem, newItem) -> {
@@ -102,7 +102,7 @@ public class AddScheduleFormController implements Initializable {
         });
     }
     public void cinemaNameFieldInit() {
-        cinemaInfo = main.getProcessorManager().getCinemaManagementProcessor().getData(0, -1, "", "NAME ASC").getData();
+        cinemaInfo = main.getProcessorManager().getCinemaManagementProcessor().getData(0, -1, "", "CINEMAS.NAME ASC").getData();
         cinemaNames = Utils.getDataValuesByColumnName(cinemaInfo, "CINEMAS.NAME");;
         cinemaNameField.setItems(FXCollections.observableArrayList(cinemaNames));
         cinemaNameField.valueProperty().addListener((obs, oldItem, newItem) -> {
@@ -154,7 +154,7 @@ public class AddScheduleFormController implements Initializable {
         String id = null;
         for (int i=0; i<startTimes.size();++i) {
             if (startTimes.get(i) == value) {
-                id = Utils.getRowValueByColumnName(2 + i, "ID", showTimeInfo);
+                id = Utils.getRowValueByColumnName(2 + i, "SHOW_TIMES.ID", showTimeInfo);
                 break;
             }
         }

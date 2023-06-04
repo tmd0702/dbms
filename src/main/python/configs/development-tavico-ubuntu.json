@@ -1,8 +1,8 @@
 {
   "DATABASE": {
-    "DB_HOST" : "localhost",
-    "DB_USER" : "ductruong",
-    "DB_PASS" : "sa123456A#",
+    "DB_HOST" : "127.0.0.1",
+    "DB_USER" : "root",
+    "DB_PASS" : "T#vico2018ubuntu",
     "DB_NAME" : "MOVIE",
     "BACKUP": {
         "BACKUP_INTERVAL": 86400,

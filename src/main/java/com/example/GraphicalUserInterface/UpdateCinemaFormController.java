@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class UpdateCinemaFormController implements Initializable {
     private ManagementMain main;
     @FXML
-    private TextField nameField, cineAreaField, addressField, idField;
+    private TextField nameField, addressField, idField;
     @FXML
     private VBox updateCinemaForm;
     @Override
@@ -56,7 +56,6 @@ public class UpdateCinemaFormController implements Initializable {
         HashMap<String, String> cinemaInfo = new HashMap<String, String>();
         cinemaInfo.put("ADDRESS", addressField.getText());
         cinemaInfo.put("NAME", nameField.getText());
-        cinemaInfo.put("CINE_AREA", cineAreaField.getText());
         JSONObject jsonData = new JSONObject();
         jsonData.put("column_value_dict", cinemaInfo);
         jsonData.put("query_condition", String.format("ID = '%s'", idField.getText()));

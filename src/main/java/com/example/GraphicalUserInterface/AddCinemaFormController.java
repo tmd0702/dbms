@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class AddCinemaFormController implements Initializable {
     private ManagementMain main;
     @FXML
-    private TextField nameField, cineAreaField, addressField;
+    private TextField nameField, addressField;
     @FXML
     private VBox addCinemaForm;
 
@@ -60,7 +60,6 @@ public class AddCinemaFormController implements Initializable {
 //        cinemaInfo.put("ID", main.getIdGenerator().generateId("CINEMAS"));
         cinemaInfo.put("NAME", nameField.getText());
         cinemaInfo.put("ADDRESS", addressField.getText());
-        cinemaInfo.put("CINE_AREA", cineAreaField.getText());
         JSONObject jsonData = new JSONObject();
         jsonData.put("column_value_dict", cinemaInfo);
         jsonData.put("is_commit", true);

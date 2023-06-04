@@ -11,16 +11,15 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class UpdateItemFormController implements Initializable {
     private ManagementMain main;
     @FXML
-    private TextField idField, nameField, priceField;
+    private TextField idField, nameField;
     @FXML
-    private ComboBox categoryField;
+    private ComboBox itemCategoryCategoryField;
     @FXML
     private VBox updateItemForm;
     public UpdateItemFormController() {
@@ -53,8 +52,7 @@ public class UpdateItemFormController implements Initializable {
     public void handleUpdateRecordRequest() {
         HashMap<String, String> itemInfo = new HashMap<String, String>();
         itemInfo.put("NAME", nameField.getText());
-        itemInfo.put("CATEGORY", categoryField.getValue().toString());
-        itemInfo.put("PRICE", priceField.getText());
+        itemInfo.put("CATEGORY", itemCategoryCategoryField.getValue().toString());
         JSONObject jsonData = new JSONObject();
         jsonData.put("column_value_dict", itemInfo);
         jsonData.put("query_condition", String.format("ID = '%s'", idField.getText()));

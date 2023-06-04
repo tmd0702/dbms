@@ -31,9 +31,7 @@
             <TextField fx:id="nameField" layoutX="404.0" layoutY="103.0" />
             <TextField fx:id="addressField" layoutX="178.0" layoutY="138.0" />
             <Label layoutX="362.0" layoutY="107.0" prefHeight="17.0" prefWidth="33.0" text="Name" />
-            <Label layoutX="371.0" layoutY="142.0" text="Area" />
             <Label layoutX="131.0" layoutY="142.0" text="Address" />
-            <TextField fx:id="cineAreaField" layoutX="405.0" layoutY="138.0" />
             <TextField fx:id="idField" layoutX="177.0" layoutY="103.0" />
             <Label layoutX="135.0" layoutY="107.0" prefHeight="17.0" prefWidth="33.0" text="ID" />
          </children>

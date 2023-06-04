@@ -69,7 +69,7 @@ public class UpdateScreenRoomFormController implements Initializable {
         for (int i=0; i<cinemaNames.size();++i) {
             if (cinemaNames.get(i) == value) {
                 System.out.println(i + "sdsdsd");
-                id = Utils.getRowValueByColumnName(2 + i, "ID", cinemaInfo);
+                id = Utils.getRowValueByColumnName(2 + i, "CINEMAS.ID", cinemaInfo);
                 break;
             }
         }

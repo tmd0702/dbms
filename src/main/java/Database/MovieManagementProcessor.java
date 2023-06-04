@@ -95,7 +95,7 @@ public class MovieManagementProcessor extends Processor {
             Collections.sort(tmpList, Comparator.comparingInt(Movie::getDuration));
             System.out.println(tmpList.size());
             for(Movie movie : tmpList) {
-//                scheduleMovie(movie);
+                scheduleMovie(movie);
             }
             this.movieManager.setMovieList(tmpList);
             rs.close();
