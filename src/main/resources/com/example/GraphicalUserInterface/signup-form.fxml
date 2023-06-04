@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="signupFormRoot" layoutX="203.0" layoutY="25.0" prefHeight="548.0" prefWidth="493.0" style="-fx-background-color: #AAAAAA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GraphicalUserInterface.SignupFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="34.0" layoutX="109.0" layoutY="276.0" stroke="WHITE" strokeType="INSIDE" style="-fx-fill: white;" width="275.0" />
+      <Label layoutX="119.0" layoutY="21.0" style="-fx-font-weight: bold;" text="Create account" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="firstNameField" layoutX="108.0" layoutY="88.0" prefHeight="34.0" prefWidth="133.0" promptText="First name" />
+      <TextField fx:id="emailField" layoutX="108.0" layoutY="138.0" prefHeight="34.0" prefWidth="275.0" promptText="Email" />
+      <TextField fx:id="lastNameField" layoutX="249.0" layoutY="88.0" prefHeight="34.0" prefWidth="133.0" promptText="Last name" />
+      <TextField fx:id="phoneField" layoutX="108.0" layoutY="183.0" prefHeight="34.0" prefWidth="275.0" promptText="Phone" />
+      <DatePicker fx:id="dateOfBirthField" layoutX="108.0" layoutY="228.0" prefHeight="34.0" prefWidth="275.0" promptText="Date of birth" />
+      <RadioButton layoutX="206.0" layoutY="276.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="87.0" text="Male" textFill="#aaaaaa">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="304.0" layoutY="276.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="87.0" text="Female" textFill="#aaaaaa" toggleGroup="$gender" />
+      <TextField fx:id="addressField" layoutX="108.0" layoutY="324.0" prefHeight="34.0" prefWidth="275.0" promptText="Address" />
+      <TextField fx:id="usernameField" layoutX="108.0" layoutY="370.0" prefHeight="34.0" prefWidth="275.0" promptText="Username" />
+      <Label layoutX="116.0" layoutY="284.0" text="Gender" textFill="#aaaaaa" />
+      <PasswordField fx:id="passwordField" layoutX="108.0" layoutY="418.0" prefHeight="34.0" prefWidth="275.0" promptText="Password" />
+      <Button layoutX="108.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#onSubmitSignUpBtn" prefHeight="34.0" prefWidth="275.0" style="-fx-background-color: #810303;" text="Create Account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="146.0" layoutY="514.0" text="Already have an account?" />
+      <Label fx:id="signInBtn" layoutX="299.0" layoutY="514.0" onMouseClicked="#onSignInBtnClick" text="Sign in" textFill="#9f1212" />
+   </children>
+</AnchorPane>

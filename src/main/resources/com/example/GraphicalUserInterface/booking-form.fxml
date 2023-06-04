@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GraphicalUserInterface.BookingController">
+   <children>
+      <AnchorPane fx:id="pane4" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #121212;">
+         <children>
+            <Label layoutX="604.0" layoutY="38.0" text="ORDER" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="image4" fitHeight="560.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane layoutX="371.0" layoutY="86.0" maxHeight="513.0" maxWidth="526.0" minHeight="394.0" minWidth="266.0" prefHeight="513.0" prefWidth="526.0" style="-fx-background-color: #121212;">
+               <children>
+                  <Label layoutX="179.0" layoutY="481.0" prefHeight="16.0" prefWidth="105.0" text="Time left to purchase: " textFill="#eeeeee">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Line endX="368.971435546875" endY="-1.52587890625E-5" layoutX="132.0" layoutY="62.0" startX="-100.0" stroke="#f2f2f2" />
+                  <Label layoutX="32.0" layoutY="81.0" text="Theater:" textFill="#fcfcfc" />
+                  <Label layoutX="279.0" layoutY="120.0" text="Seats:" textFill="#fcfcfc" wrapText="true" />
+                  <Label layoutX="31.0" layoutY="120.0" text="Showtime:" textFill="#fcfcfc" />
+                  <Label layoutX="276.0" layoutY="81.0" text="Screen:" textFill="#fcfcfc" />
+                  <Line endX="362.83099365234375" layoutX="137.0" layoutY="216.0" startX="-100.0" stroke="#f2f2f2" />
+                  <Label layoutX="39.0" layoutY="185.0" text="Ticket price:" textFill="#fcfcfc" />
+                  <Label layoutX="279.0" layoutY="183.0" text="Combo:" textFill="#fcfcfc" />
+                  <Line endX="356.971435546875" layoutX="140.0" layoutY="162.0" startX="-100.0" stroke="#f2f2f2" />
+                  <Label layoutX="41.0" layoutY="236.0" text="Total:" textFill="#fcfcfc" />
+                  <Label fx:id="nameMovieBookingFinal" layoutX="47.0" layoutY="3.0" maxWidth="448.0" prefHeight="49.0" prefWidth="448.0" text="Label" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameCinemaFinal" layoutX="97.0" layoutY="81.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Theater" textFill="#fcfcfc" />
+                  <Label fx:id="showTimeFinal" layoutX="108.0" layoutY="120.0" text="time" textFill="#fcfcfc" />
+                  <Label fx:id="screenNameFinal" layoutX="336.0" layoutY="81.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="ScreenID" textFill="#fcfcfc" />
+                  <Label fx:id="seatIDFinal" layoutX="328.0" layoutY="111.0" maxWidth="176.0" prefHeight="36.0" prefWidth="176.0" text="SeatsID" textFill="#fcfcfc" wrapText="true" />
+                  <Label fx:id="priceFinal" layoutX="125.0" layoutY="184.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Price" textFill="#fcfcfc" />
+                  <Label fx:id="comboFinal" layoutX="340.0" layoutY="184.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Comboi" textFill="#fcfcfc" />
+                  <Label fx:id="totalFinal" layoutX="92.0" layoutY="237.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="total" textFill="#fcfcfc" />
+                  <Label fx:id="countdownLabel1" layoutX="290.0" layoutY="481.0" prefHeight="16.0" prefWidth="57.0" text="clock" textFill="#eeeeee">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="195.0" layoutY="436.0" mnemonicParsing="false" onAction="#onPurchaseButtonClicked" prefHeight="35.0" prefWidth="105.0" style="-fx-background-color: #8D090D;" text="Pucharse" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="42.0" layoutY="270.0" prefHeight="56.0" prefWidth="117.0" text="Please enter promotion code" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="promotionField" layoutX="167.0" layoutY="284.0" />
+                  <Label layoutX="283.0" layoutY="237.0" text="Discount:" textFill="#fcfcfc" />
+                  <Label fx:id="discount" layoutX="348.0" layoutY="237.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Price" textFill="#fcfcfc" />
+                  <Button layoutX="348.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#applyPromotionOnClick" prefHeight="29.0" prefWidth="75.0" style="-fx-background-color: #8D090D;" text="Apply" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <VBox fx:id="paymentMethodVbox" layoutX="25.0" layoutY="330.0" prefHeight="89.0" prefWidth="472.0" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="70.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleSwitchToPageBefore" onMouseClicked="#onButtonClicked" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 19; -fx-background-color: #3a94b2;" text="Back" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane3" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #121212;">
+         <children>
+            <ImageView fx:id="image3" fitHeight="560.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="822.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSwitchPageAfter" onMouseClicked="#onButtonClicked" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 19; -fx-background-color: #760404;" text="Next" textFill="WHITE" />
+            <Label layoutX="573.0" layoutY="51.0" text="BUY ITEMS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Line endX="215.3753662109375" endY="-1.52587890625E-5" layoutX="663.0" layoutY="107.0" startX="-204.70748901367188" startY="-1.52587890625E-5" stroke="WHITE" />
+            <ScrollPane fx:id="itemControllerScrollPane" hbarPolicy="NEVER" layoutX="458.0" layoutY="134.0" prefHeight="394.0" prefWidth="421.0" style="-fx-background-color: transparent;">
+               <content>
+                  <VBox fx:id="itemControllerContainer" prefHeight="394.0" prefWidth="406.0" style="-fx-background-color: #121212; -fx-border-color: transparent;" />
+               </content>
+            </ScrollPane>
+            <Button layoutX="70.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleSwitchToPageBefore" onMouseClicked="#onButtonClicked" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 19; -fx-background-color: #3a94b2;" text="Back" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane2" maxHeight="600.0" maxWidth="900.0" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #121212;">
+         <children>
+            <ImageView fx:id="image2" fitHeight="560.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane fx:id="ticketInfor" layoutX="47.0" layoutY="72.0" maxHeight="394.0" maxWidth="266.0" minHeight="394.0" minWidth="266.0" prefHeight="394.0" prefWidth="266.0" style="-fx-background-color: #121212;">
+               <children>
+                  <Label layoutX="73.0" layoutY="32.0" text="TICKET INFORMATION" textFill="#d45353">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="77.0" layoutY="366.0" prefHeight="16.0" prefWidth="105.0" text="Time left to purchase: " textFill="#eeeeee">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" layoutX="132.0" layoutY="113.0" startX="-100.0" stroke="#f2f2f2" />
+                  <Label layoutX="35.0" layoutY="128.0" text="Theater:" textFill="#fcfcfc" />
+                  <Label layoutX="46.0" layoutY="209.0" text="Seats:" textFill="#fcfcfc" wrapText="true" />
+                  <Label layoutX="23.0" layoutY="154.0" text="Showtime:" textFill="#fcfcfc" />
+                  <Label layoutX="39.0" layoutY="179.0" text="Screen:" textFill="#fcfcfc" />
+                  <Line endX="100.0" layoutX="140.0" layoutY="250.0" startX="-100.0" stroke="#f2f2f2" />
+                  <Label layoutX="17.0" layoutY="261.0" text="Ticket price:" textFill="#fcfcfc" />
+                  <Label layoutX="40.0" layoutY="286.0" text="Combo:" textFill="#fcfcfc" />
+                  <Line endX="100.0" layoutX="136.0" layoutY="316.0" startX="-100.0" stroke="#f2f2f2" />
+                  <Label layoutX="49.0" layoutY="334.0" text="Total:" textFill="#fcfcfc" />
+                  <Label fx:id="nameMovieBooking" layoutX="42.0" layoutY="32.0" maxWidth="191.0" prefHeight="90.0" prefWidth="191.0" text="Label" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameCinema" layoutX="100.0" layoutY="128.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Theater" textFill="#fcfcfc" />
+                  <Label fx:id="showTime" layoutX="100.0" layoutY="154.0" text="time" textFill="#fcfcfc" />
+                  <Label fx:id="screenName" layoutX="99.0" layoutY="179.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="ScreenID" textFill="#fcfcfc" />
+                  <Label fx:id="seatID" layoutX="95.0" layoutY="200.0" maxWidth="147.0" prefHeight="36.0" prefWidth="145.0" text="SeatsID" textFill="#fcfcfc" wrapText="true" />
+                  <Label fx:id="price" layoutX="103.0" layoutY="260.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Price" textFill="#fcfcfc" />
+                  <Label fx:id="combo" layoutX="101.0" layoutY="287.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="Comboi" textFill="#fcfcfc" />
+                  <Label fx:id="total" layoutX="100.0" layoutY="335.0" maxWidth="134.0" prefHeight="17.0" prefWidth="134.0" text="total" textFill="#fcfcfc" />
+                  <Label fx:id="showDate" layoutX="137.0" layoutY="154.0" text="date" textFill="#fcfcfc" />
+                  <Label fx:id="countdownLabel" layoutX="188.0" layoutY="366.0" prefHeight="16.0" prefWidth="57.0" text="time" textFill="#eeeeee">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button layoutX="822.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSwitchPageAfter" onMouseClicked="#onButtonClicked" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 19; -fx-background-color: #760404;" text="Next" textFill="WHITE" />
+            <Label layoutX="546.0" layoutY="60.0" prefHeight="39.0" prefWidth="86.0" text="SCREEN" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Line endX="213.95904541015625" endY="7.62939453125E-6" layoutX="626.0" layoutY="113.0" startX="-211.13540649414062" startY="7.62939453125E-6" stroke="WHITE" />
+            <QuadCurve controlX="-5.0" controlY="-161.0" endX="220.9898681640625" endY="12.86663818359375" layoutX="619.0" layoutY="205.0" startX="-213.4359130859375" startY="2.7929840087890625" stroke="#b51111" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="0.510688836104513" endY="0.7292161520190025" startX="0.513064133016627">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.7631579041481018" green="0.07772904634475708" blue="0.07772904634475708" opacity="0.550000011920929" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color opacity="0.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </QuadCurve>
+            <QuadCurve controlX="-23.66180419921875" controlY="-332.0" endX="245.9102783203125" endY="-95.28662109375" layoutX="623.0" layoutY="339.0" startX="-265.2398681640625" startY="-82.55029296875" stroke="TRANSPARENT" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="0.5201900237529691" endY="0.8859857482185273" startX="0.5225653206650831">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.699999988079071" green="0.07000000029802322" blue="0.07000000029802322" opacity="0.47227534651756287" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color opacity="0.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </QuadCurve>
+            <Label layoutX="642.0" layoutY="546.0" prefHeight="26.0" prefWidth="18.0" style="-fx-background-color: #A4A4A4; -fx-background-radius: 3;" />
+            <Label layoutX="556.0" layoutY="545.0" prefHeight="26.0" prefWidth="18.0" style="-fx-background-color: #393939; -fx-background-radius: 3;" textFill="#a4a4a4" />
+            <Label layoutX="448.0" layoutY="545.0" prefHeight="26.0" prefWidth="18.0" style="-fx-background-color: #8D090D; -fx-background-radius: 3;" textFill="#a4a4a4" />
+            <Label layoutX="668.0" layoutY="547.0" text="Available" textFill="WHITE" />
+            <Label layoutX="578.0" layoutY="547.0" text="Booking" textFill="WHITE" />
+            <Label layoutX="478.0" layoutY="550.0" text="Selected" textFill="WHITE" />
+            <GridPane fx:id="SeatGrid" layoutX="385.0" layoutY="234.0" prefHeight="298.0" prefWidth="507.0">
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+            </GridPane>
+            <Button layoutX="70.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleSwitchToPageBefore" onMouseClicked="#onButtonClicked" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 19; -fx-background-color: #3a94b2;" text="Back" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane1" maxHeight="600.0" maxWidth="900.0" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #121212;">
+         <children>
+            <ImageView fx:id="image1" fitHeight="560.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="560.0" layoutY="24.0" prefHeight="30.0" prefWidth="60.0" text="Date" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="AnchorDateButton" layoutX="345.0" layoutY="78.0" prefHeight="72.0" prefWidth="548.0">
+               <children>
+                  <Button fx:id="DateBtn1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="77.0" style="-fx-background-color: #2B2B2B;" text="Thứ 2 11/4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="DateBtn3" layoutX="170.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: #2B2B2B;" text="Th 4 11/4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="DateBtn4" layoutX="247.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: #2B2B2B;" text="Th 5 11/4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="DateBtn2" layoutX="93.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: #2B2B2B;" text="Th 3 11/4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="DateBtn6" layoutX="401.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: #2B2B2B;" text="Thứ Bay 11/4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="DateBtn5" layoutX="324.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="75.0" style="-fx-background-color: #2B2B2B;" text="Th 6 11/4" textAlignment="CENTER" textFill="#fffafa" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="DateBtn7" layoutX="478.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleDateButtonAction" onMouseClicked="#onButtonClicked" prefHeight="56.0" prefWidth="74.0" style="-fx-background-color: #2B2B2B;" text="Chủ nhat 11/4" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Label layoutX="540.0" layoutY="198.0" prefHeight="30.0" prefWidth="98.0" text="Cinemas" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Line endX="637.038330078125" endY="41.425697326660156" layoutX="246.0" layoutY="33.0" startX="117.99996948242188" startY="41.42571258544922" stroke="WHITE" />
+            <Label layoutX="572.0" layoutY="387.0" prefHeight="30.0" prefWidth="60.0" text="Time" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button layoutX="782.0" layoutY="564.0" mnemonicParsing="false" onAction="#handleSwitchPageAfter" onMouseClicked="#onButtonClicked" prefHeight="29.0" prefWidth="75.0" style="-fx-background-radius: 19; -fx-background-color: #760404;" text="Next" textFill="WHITE" />
+            <Line endX="819.6775512695312" endY="262.03076171875" layoutX="73.0" layoutY="-79.0" startX="290.9999694824219" startY="262.03076171875" stroke="WHITE" />
+            <Line endX="1244.0" endY="484.7898254394531" layoutX="-348.0" layoutY="-109.0" startX="712.0" startY="484.7898254394531" stroke="WHITE" />
+            <AnchorPane layoutX="367.0" layoutY="430.0" prefHeight="128.0" prefWidth="487.0">
+               <children>
+                  <ScrollPane fx:id="timeSlotSecionScrollPane" hbarPolicy="NEVER" layoutY="3.0" prefHeight="64.0" prefWidth="529.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+                     <content>
+                        <HBox fx:id="timeSection" prefHeight="47.0" prefWidth="582.0" visible="false" />
+                     </content>
+                  </ScrollPane>
+                  <FontAwesomeIconView fx:id="timeSlotScrollLeftBtn" fill="#00bbff" glyphName="ANGLE_DOUBLE_LEFT" layoutX="55.0" layoutY="109.0" onMouseClicked="#scrollLeftBtnOnClick" opacity="0.3" size="25" text="" visible="false" wrappingWidth="18.0" />
+                  <FontAwesomeIconView fx:id="timeSlotScrollRightBtn" fill="#00bbff" glyphName="ANGLE_DOUBLE_RIGHT" layoutX="514.0" layoutY="109.0" onMouseClicked="#scrollRightBtnOnClick" opacity="0.3" size="25" text="" visible="false" wrappingWidth="17.0" />
+                  <Label fx:id="announceTime" text="Please choose one cinema you would you like to watch in listed above" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="375.0" layoutY="238.0" prefHeight="112.0" prefWidth="524.0">
+               <children>
+                  <ScrollPane fx:id="cinemaSectionScrollPane" hbarPolicy="NEVER" prefHeight="64.0" prefWidth="501.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+                     <content>
+                        <HBox fx:id="cinemaSection" prefHeight="47.0" prefWidth="569.0" visible="false" />
+                     </content>
+                  </ScrollPane>
+                  <FontAwesomeIconView fx:id="cineScrollLeftBtn" fill="#00bbff" glyphName="ANGLE_DOUBLE_LEFT" layoutX="28.0" layoutY="107.0" onMouseClicked="#scrollLeftBtnOnClick" opacity="0.3" size="25" text="" visible="false" wrappingWidth="17.0" />
+                  <FontAwesomeIconView fx:id="cineScrollRightBtn" fill="#00bbff" glyphName="ANGLE_DOUBLE_RIGHT" layoutX="485.0" layoutY="107.0" onMouseClicked="#scrollRightBtnOnClick" opacity="0.3" size="25" visible="false" />
+                  <Label fx:id="announceCinema" text="Please choose one date the movie is being showed" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

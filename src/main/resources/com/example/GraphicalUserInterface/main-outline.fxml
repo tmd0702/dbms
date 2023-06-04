@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="mainOutlineScrollPane" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GraphicalUserInterface.MainOutlineController">
+   <content>
+      <AnchorPane fx:id="mainOutlineRootContainer">
+         <children>
+            <VBox fx:id="mainOutlineContentView" prefHeight="200.0" prefWidth="900.0">
+               <AnchorPane fx:id="headerBar" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="891.0" style="-fx-background-color: #D9D9D9; -fx-pref-height: 56;" AnchorPane.bottomAnchor="1552.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <ImageView fx:id="logoImageView" fitHeight="56.0" fitWidth="56.0" onMouseClicked="#logoImageViewOnClick" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                  </image>
+                     </ImageView>
+                     <TextField fx:id="inputField" layoutX="263.0" layoutY="11.0" onAction="#onSearchFieldEnterKeyPress" prefHeight="25.0" prefWidth="359.0" promptText="Search" />
+                     <HBox layoutX="742.0" layoutY="11.0" spacing="10.0">
+                        <children>
+                           <Button fx:id="signInBtn" mnemonicParsing="false" onMouseClicked="#onSignInBtnClick" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #AB0A10; -fx-font-weight: bold;" text="Sign in" textFill="WHITE" />
+                           <Button fx:id="signUpBtn" mnemonicParsing="false" onMouseClicked="#onSignUpBtnClick" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #AB0A10; -fx-font-weight: bold;" text="Sign up" textFill="WHITE" />
+                        </children>
+                     </HBox>
+                     <Group fx:id="userProfileBtn" layoutX="850.0" layoutY="24.0" onMouseClicked="#userProfileBtnOnClick" visible="false">
+                        <children>
+                           <Circle fill="DODGERBLUE" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+                           <FontAwesomeIconView glyphName="USER" layoutX="-7.0" layoutY="6.0" size="20" />
+                        </children>
+                     </Group>
+                  </children>
+               </AnchorPane>
+               <AnchorPane fx:id="mainOutlineContainer" prefHeight="200.0" prefWidth="200.0" />
+            </VBox>
+            <VBox fx:id="userNavigator" alignment="TOP_CENTER" layoutX="653.0" layoutY="47.0" prefHeight="123.0" prefWidth="219.0" spacing="20.0" style="-fx-background-color: #333333; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);">
+               <children>
+                  <Button fx:id="viewUserProfileBtn" mnemonicParsing="false" onMouseClicked="#viewUserProfileBtnOnClick" prefHeight="37.0" prefWidth="179.0" style="-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 0.0, 0.0); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-color: #333333;">
+                     <graphic>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="userFullNameDisplayField" style="-fx-font-size: 14;" text="Truong Minh Duc" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="signOutBtn" mnemonicParsing="false" prefHeight="37.0" prefWidth="183.0" style="-fx-background-color: #333333; -fx-text-fill: white; -fx-font-weight: bold;">
+                     <graphic>
+                        <AnchorPane onMouseClicked="#signOutBtnOnClick" prefHeight="29.0" prefWidth="166.0">
+                           <children>
+                              <Group layoutX="14.0" layoutY="15.0">
+                                 <children>
+                                    <Circle fill="#909396" radius="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                    <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="-8.0" layoutY="6.0" size="18" />
+                                 </children></Group>
+                              <Label layoutX="37.0" layoutY="6.0" text="Sign out" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

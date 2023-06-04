@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane fx:id="userProfileViewMainContainer" prefHeight="600.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GraphicalUserInterface.UserProfileViewController">
+   <children>
+      <VBox fx:id="userProfileViewTabPanelContainer" prefHeight="600.0" prefWidth="110.0" style="-fx-background-color: #333333;">
+         <children>
+            <Button fx:id="dashboardTabPanel" mnemonicParsing="false" text="Dashboard" />
+            <Button fx:id="profileTabPanel" mnemonicParsing="false" text="Profile" />
+            <Button fx:id="pointTabPanel" mnemonicParsing="false" text="Point" />
+            <Button fx:id="paymentHistoryTabPanel" mnemonicParsing="false" text="Payment History" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

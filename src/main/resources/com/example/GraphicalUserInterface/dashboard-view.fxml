@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="profileViewContainer" layoutX="110.0" prefHeight="600.0" prefWidth="790.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GraphicalUserInterface.DashboardViewController">
+   <children>
+      <AnchorPane layoutX="94.0" layoutY="28.0" prefHeight="38.0" prefWidth="602.0" style="-fx-background-color: #D9D9D9;">
+         <children>
+            <Label layoutX="251.0" layoutY="7.0" text="DASHBOARD">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Line endX="455.0" layoutX="237.0" layoutY="228.0" startX="-140.0" stroke="WHITE" />
+      <Label fx:id="greetingLabel" layoutX="111.0" layoutY="159.0" text="Hi &lt;USERNAME&gt;," textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="176.0" prefHeight="38.0" prefWidth="339.0" text="From this dashboard, you can have an overview of your account and update any information easily." textFill="WHITE" wrapText="true" />
+      <Line endX="-34.0" endY="254.0" layoutX="429.0" layoutY="268.0" startX="-34.0" startY="-17.0" stroke="WHITE" />
+      <Label layoutX="138.0" layoutY="258.0" text="Your Account:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="258.0" text="Account Information:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="viewPointBtn" layoutX="270.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#viewPointBtnOnClick" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #ab0a10;" text="View" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="editProfileBtn" layoutX="550.0" layoutY="439.0" mnemonicParsing="false" onMouseClicked="#editProfileBtnOnClick" prefHeight="30.0" prefWidth="103.0" style="-fx-background-color: #ab0a10;" text="Edit Profile" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="memberStatusLabel" layoutX="120.0" layoutY="288.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Member Status: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="totalSpendingLabel" layoutX="120.0" layoutY="338.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Total Spending: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="totalPointLabel" layoutX="120.0" layoutY="388.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Total Point: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="432.0" layoutY="288.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Name: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="emailLabel" layoutX="432.0" layoutY="338.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Email: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="phoneLabel" layoutX="432.0" layoutY="388.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Phone: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <FontAwesomeIconView fill="#f4f1f1" glyphName="USER_CIRCLE" layoutX="614.0" layoutY="204.0" selectionFill="#141414" size="80" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="439.0" prefHeight="30.0" prefWidth="136.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Payment History" textAlignment="CENTER">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

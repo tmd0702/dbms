@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pointViewMainContainer" layoutX="110.0" prefHeight="600.0" prefWidth="790.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.GraphicalUserInterface.PointViewController">
+   <children>
+      <AnchorPane layoutX="94.0" layoutY="28.0" prefHeight="38.0" prefWidth="602.0" style="-fx-background-color: #D9D9D9;">
+         <children>
+            <Label layoutX="276.0" layoutY="7.0" text="POINT" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Line endX="455.0" layoutX="238.0" layoutY="179.0" startX="-140.0" stroke="WHITE" />
+      <Label layoutX="106.0" layoutY="149.0" text="Summary" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Line endX="455.0" layoutX="238.0" layoutY="359.0" startX="-140.0" stroke="WHITE" />
+      <Label layoutX="106.0" layoutY="329.0" text="Current Status" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalSpendingLabel" layoutX="95.0" layoutY="211.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Total Spending: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="totalPointLabel" layoutX="95.0" layoutY="261.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #D9D9D9; -fx-background-radius: 5px;" text="Total Point: ">
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <Group fx:id="scoreBarContainer" layoutX="98.0" layoutY="470.0">
+         <children>
+            <AnchorPane fx:id="scoreBarFill" prefHeight="17.0" prefWidth="200.0" style="-fx-border-color: transparent; -fx-border-radius: 100px; -fx-border-width: 2px; -fx-background-radius: 100px; -fx-background-color: yellow; -fx-border-color: #121212;" />
+            <AnchorPane fx:id="scoreBar" prefHeight="17.0" prefWidth="596.0" style="-fx-border-color: white; -fx-border-radius: 5%; -fx-border-width: 2px;" />
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

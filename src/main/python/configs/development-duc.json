@@ -1,0 +1,19 @@
+{
+  "DATABASE": {
+    "DB_HOST" : "127.0.0.1",
+    "DB_USER" : "4hb_admin",
+    "DB_PASS" : "sa123456",
+    "DB_NAME" : "MOVIE",
+    "BACKUP": {
+        "BACKUP_INTERVAL": 86400,
+        "BACKUP_DIR": "C:/Users/mduc0/Documents/CODE/Java/dbms-project/cinema-management-system/cinema-management-system-main/src/main/python/database/backup/storage"
+    }
+  },
+  "API": {
+    "API_HOST": "0.0.0.0",
+    "API_PORT": "8085"
+  },
+  "SEARCH_ENGINE": {
+    "LANGUAGE_MODEL": "paraphrase-MiniLM-L6-v2"
+  }
+}
