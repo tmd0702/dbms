@@ -54,7 +54,6 @@ public class AdminLoginFormController implements Initializable {
 //        Response response = managementMain.getProcessorManager().getAccountManagementProcessor().handleSigninAction(signinInfo);
         StatusCode signinStatus = response.getStatusCode();
         if (signinStatus == StatusCode.OK) {
-            System.out.println("Sign in success");
 
             // write username & password vo trong file account-cache.properties
             if (rememberAccountCheckBox.isSelected()) {
@@ -62,10 +61,19 @@ public class AdminLoginFormController implements Initializable {
             } else {
                 Utils.writeProperties(this.prop, "", "", filePath);
             }
-            this.managementMain.changeScene("management-view.fxml");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation");
+            alert.setContentText(response.getMessage());
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                this.managementMain.changeScene("management-view.fxml");
+            } else {
+
+            }
+
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Failed");
+            alert.setTitle("Confirmation");
             alert.setContentText(response.getMessage());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {

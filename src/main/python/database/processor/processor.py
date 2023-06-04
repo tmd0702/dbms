@@ -29,7 +29,6 @@ class Processor:
         query = query + " WHERE " + query_condition if len(query_condition) > 0 else query
         query = query + " ORDER BY " + sort_query if len(sort_query) > 0 else query
         query = query + f" LIMIT {start_index}, {quantity}" if quantity > -1 else query
-        print(query)
         def _get_column_names_map(x):
             return x[0]
 
@@ -61,7 +60,6 @@ class Processor:
             response["error_message"] = str(e)
             response["status_code"] = HTTPStatus.BAD_REQUEST.value
 
-        print(response)
         return response
 
     def _insert(self, column_value_dict, table, is_generate_id_allow=True, is_commit=True):
@@ -152,7 +150,8 @@ class PromotionManagementProcessor(Processor):
             "PROMOTIONS.ID AS 'PROMOTIONS.ID', USER_CATEGORY.POINT_LOWERBOUND AS 'USER_CATEGORY.POINT_LOWERBOUND', "
             "PROMOTIONS.NAME AS 'PROMOTIONS.NAME', PROMOTIONS.START_DATE AS 'PROMOTIONS.START_DATE', "
             "PROMOTIONS.END_DATE AS 'PROMOTIONS.END_DATE', PROMOTIONS.DESCRIPTION AS 'PROMOTIONS.DESCRIPTION', "
-            "PROMOTIONS.DISCOUNT AS 'PROMOTIONS.DISCOUNT', USER_CATEGORY.CATEGORY AS 'USER_CATEGORY.CATEGORY'" if not count else "COUNT(*) AS 'COUNT'",
+            "PROMOTIONS.DISCOUNT AS 'PROMOTIONS.DISCOUNT', USER_CATEGORY.CATEGORY AS 'USER_CATEGORY.CATEGORY'"
+            if not count else "COUNT(*) AS 'COUNT'",
             start_index, quantity, final_query_condition, sort_query, "PROMOTIONS, USER_CATEGORY")
 
 
