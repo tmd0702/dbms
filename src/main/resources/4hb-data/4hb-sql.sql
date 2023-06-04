@@ -216,23 +216,23 @@ END; //
 DELIMITER ;
 
 DELIMITER //
--- CREATE FUNCTION signInFunction(username VARCHAR(255), pass varchar(255)) RETURNS BOOLEAN
--- BEGIN
--- DECLARE passw varchar(255);
--- DECLARE result BOOLEAN;
--- SET result = 0;
--- SET passw = (SELECT A.PASS FROM AUTHENTICATION A JOIN USERS U ON A.USER_ID = U.ID WHERE U.USERNAME = username);
--- IF (password = pass) THEN
--- 	SET result = 1;
--- ELSE
--- 	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  "wrong username or password";
--- 	SET result = 0;
--- END IF;
--- RETURN result;
--- END; //
+ CREATE FUNCTION signInFunction(username VARCHAR(255), pass varchar(255)) RETURNS BOOLEAN
+ BEGIN
+ DECLARE passw varchar(255);
+ DECLARE result BOOLEAN;
+ SET result = 0;
+ SET passw = (SELECT A.PASS FROM AUTHENTICATION A JOIN USERS U ON A.USER_ID = U.ID WHERE U.USERNAME = username);
+ IF (password = pass) THEN
+ 	SET result = 1;
+ ELSE
+ 	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT =  "wrong username or password";
+ 	SET result = 0;
+ END IF;
+ RETURN result;
+ END; //
 DELIMITER ;
-DELIMITER //
 
+DELIMITER //
 CREATE PROCEDURE signUpProcedure(uid varchar(10), auth_id varchar(10),
 								username varchar(255),firstname varchar(255),
 								pass varchar(255), lastname varchar(255), dob date,
@@ -260,9 +260,9 @@ CREATE TRIGGER TG_INSERT_PAYMENTS
 AFTER INSERT ON PAYMENTS FOR EACH ROW
 BEGIN
     DECLARE PAYMENT_DATETIME DATETIME;
-	SET PAYMENT_DATETIME = (SELECT CAST(CONCAT(SHOW_DATE,' ', START_DATE) AS DATETIME )
+	SET PAYMENT_DATETIME = (SELECT CAST(CONCAT(SHOW_DATE,' ', ST.START_TIME) AS DATETIME )
 							FROM SCHEDULES SCH, SHOW_TIMES ST
-							WHERE SCH.SHOW_TIME_ID = ST.ID AND SCH_ID = NEW.SCHEDULE_ID);
+							WHERE SCH.SHOW_TIME_ID = ST.ID AND SCH.ID = NEW.SCHEDULE_ID);
 	IF(PAYMENT_DATETIME < NEW.PAYMENT_DATE) THEN
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'The payment datetime have to be before the movie on showtime';
 	ELSE
