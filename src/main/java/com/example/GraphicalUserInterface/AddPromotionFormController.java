@@ -52,7 +52,7 @@ public class AddPromotionFormController implements Initializable {
     }
     public void userCategoryCategoryFieldInit() {
         userCategoryInfo = main.getProcessorManager().getUserCategoryManagementProcessor().getData(0, -1, "", "").getData();
-        userCategoryCategories = Utils.getDataValuesByColumnName(userCategoryInfo, "CATEGORY");
+        userCategoryCategories = Utils.getDataValuesByColumnName(userCategoryInfo, "USER_CATEGORY.CATEGORY");
         userCategoryCategoryField.setItems(FXCollections.observableArrayList(userCategoryCategories));
     }
     @FXML
