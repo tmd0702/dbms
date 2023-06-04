@@ -235,11 +235,11 @@ CREATE PROCEDURE signUpProcedure(uid varchar(10), auth_id varchar(10),
                                 gender varchar(3), address varchar(255),
                                 phone varchar(10), email varchar(255))
 BEGIN
-DECLARE USER_ID VARCHAR(10);
+DECLARE USERID VARCHAR(10);
 DECLARE USERCATEGORY VARCHAR(10);
-SET @USERCATEGORY = (SELECT ID FROM USER_CATEGORY WHERE CATEGORY = 'MEMBER');
-SET @USERID = (SELECT U.ID FROM USERS U WHERE U.EMAIL = email);
-IF (@USERID IS NULL) THEN
+SET USERCATEGORY = (SELECT ID FROM USER_CATEGORY WHERE CATEGORY = 'MEMBER');
+SET USERID = (SELECT U.ID FROM USERS U WHERE U.EMAIL = email);
+IF (USERID IS NULL) THEN
 	INSERT INTO USERS VALUES (uid, username, firstname, lastname, dob, gender, address, phone, email, 'CUSTOMER', 0, @USERCATEGORY);
     INSERT INTO AUTHENTICATION VALUES (auth_id, pass, uid);
     COMMIT;
